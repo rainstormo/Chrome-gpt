@@ -1,31 +1,31 @@
 {
-    "name": "ChatGPT Side Panel Extension",
-    "version": "1.0",
-    "manifest_version": 3,
-    "description": "An extension to interact with ChatGPT from a side panel.",
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "commands": {
-      "toggle-side-panel": {
-        "suggested_key": {
-          "default": "Alt+J"
-        },
-        "description": "Toggle the ChatGPT side panel"
-      }
-    },
-    "permissions": ["activeTab"],
-    "web_accessible_resources": [
-      {
-        "resources": ["src/side_panel.html", "src/side_panel.css", "src/side_panel.js"],
-        "matches": ["<all_urls>"]
-      }
-    ]
-  }
+  "name": "ChatGPT Side Panel Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "An extension to interact with ChatGPT from a side panel.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+    "toggle-side-panel": {
+      "suggested_key": {
+        "default": "Alt+J"
+      },
+      "description": "Toggle the ChatGPT side panel"
+    }
+  },
+  "permissions": ["activeTab"],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/side_panel.html", "src/side_panel.css", "src/side_panel.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
   

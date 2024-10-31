@@ -1,4 +1,5 @@
-// background.js
+//Listens for the "toggle-side-panel" command (Alt + J), finds the active tab, and sends a message to the content script to toggle the side panel. 
+//Logs an error if the content script is unavailable on the tab.
 chrome.commands.onCommand.addListener((command) => {
   if (command === "toggle-side-panel") {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
