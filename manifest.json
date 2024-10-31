@@ -1,21 +1,30 @@
 {
-    "_comment": "This manifest configuration enables the extension to interact with web pages, execute background tasks, display a popup UI, and store data",
-    "manifest_version": 3,
-    "name": "Web Assistant",
+    "name": "ChatGPT Side Panel Extension",
     "version": "1.0",
-    "description": "a customizable web assistant",
-    "permissions": ["tabs", "activeTab", "storage"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": "assets/icon.png"
-    },
+    "manifest_version": 3,
+    "description": "An extension to interact with ChatGPT from a side panel.",
     "background": {
-      "service_worker": "src/background.js"
+      "service_worker": "background.js"
     },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["src/content.js"]
+        "js": ["content.js"]
+      }
+    ],
+    "commands": {
+      "toggle-side-panel": {
+        "suggested_key": {
+          "default": "Alt+J"
+        },
+        "description": "Toggle the ChatGPT side panel"
+      }
+    },
+    "permissions": ["activeTab"],
+    "web_accessible_resources": [
+      {
+        "resources": ["src/side_panel.html", "src/side_panel.css", "src/side_panel.js"],
+        "matches": ["<all_urls>"]
       }
     ]
   }
